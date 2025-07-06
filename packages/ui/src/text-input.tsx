@@ -1,7 +1,7 @@
 interface PropType {
     placeholder: string
     size: "small" | "big"
-    onChange: any
+    onChange?: any
 }
 
 
