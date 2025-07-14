@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "bookmyshow_deployment",
   "private": true,
   "scripts": {
     "build": "turbo run build",
