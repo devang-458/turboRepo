@@ -1,13 +1,14 @@
-import { WebSocketServer } from 'ws';
+import { prisma } from "@repo/db/client";
+import { WebSocketServer } from "ws";
 
-const wss = new WebSocketServer({ port: 8080 });
+const server = new WebSocketServer({ port: 8080 });
 
-wss.on('connection', function connection(ws) {
-  ws.on('error', console.error);
-
-  ws.on('message', function message(data) {
-    console.log('received: %s', data);
+server.on("connection", async (socket) => {
+  prisma.user.create({
+    data: {
+      name: Math.random().toString(),
+      password: "hi",
+    },
   });
-
-  ws.send('something');
+  socket.send("something");
 });
