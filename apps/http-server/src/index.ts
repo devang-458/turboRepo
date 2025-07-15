@@ -21,6 +21,8 @@ app.post("/signup", async (req, res) => {
       password: password,
     },
   });
+
+  res.json(response.name).status(200);
 });
 
 app.listen(3002, () => {
