@@ -11,6 +11,8 @@ app.get("/", (req, res) => {
   res.send("Hello sir");
 });
 
+
+
 app.post("/signup", async (req, res) => {
   const name = req.body.name;
   const password = req.body.password;
